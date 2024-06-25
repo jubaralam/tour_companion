@@ -1,12 +1,14 @@
 import React from "react";
 
-const InputBox = ({ type, placeholder }) => {
+const InputBox = ({ type, placeholder,name, getInputValue}) => {
   return (
-    <div>
+    <div className=" w-[400px] m-3  hover:ring-blue-500">
       <input
         type={type}
         placeholder={placeholder}
-        className=" w-lg	 border-2 rounded-md m-2 py-1 px-3 	"
+        name={name}
+        onChange={(e)=>getInputValue(e.target.name, e.target.value)}
+        className="w-full max-w-md p-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
       />
     </div>
   );
